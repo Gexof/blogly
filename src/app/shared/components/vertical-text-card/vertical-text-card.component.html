@@ -1,0 +1,23 @@
+<div class="cursor-pointer">
+  <div class="me-6 w-4/6">
+    <app-card-author
+      [authorName]="authorName"
+      [authorPic]="authorImg"
+    ></app-card-author>
+
+    <!-- Post Title -->
+    <h4 class="line-clamp-2 text-xl text-stone-950 font-bold mb-3">
+      {{ blog?.title }}
+    </h4>
+
+    <!-- Post Body -->
+    <p class="line-clamp-2 text-xs text-gray-500 mb-4">
+      {{ blog?.body }}
+    </p>
+
+    <app-card-date-save
+      [date]="blog?.date"
+      [comments]="blog?.comments?.length"
+    ></app-card-date-save>
+  </div>
+</div>

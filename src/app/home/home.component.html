@@ -1,0 +1,49 @@
+<div class="container mx-auto grid grid-cols-12 gap-4">
+  <!-- First Column spanning 8 columns -->
+  <div class="col-span-8">
+    <div class="mb-6">
+      <app-heading marked="Recently" notMarked="Posted"></app-heading>
+    </div>
+    <div class="mb-9" *ngFor="let blog of blogs">
+      <app-horizantal-card
+        [blog]="blog"
+        [authorImg]="getAuthorImg(blog.authorId)"
+        [authorName]="getAuthorName(blog.authorId)"
+      ></app-horizantal-card>
+    </div>
+  </div>
+
+  <!-- Second Column spanning 4 columns -->
+  <div class="col-span-4 ms-20 ps-10 border-l-2 border-gray-50">
+    <!-- Popular Post -->
+    <div>
+      <app-heading marked="Popular" notMarked="Post"></app-heading>
+      <div class="mt-6">
+        <div class="mt-3" *ngFor="let blog of blogs.slice(0, 3)">
+          <app-vertical-text-card
+            [blog]="blog"
+            [authorImg]="getAuthorImg(blog.authorId)"
+            [authorName]="getAuthorName(blog.authorId)"
+          ></app-vertical-text-card>
+        </div>
+      </div>
+    </div>
+
+    <!-- Top Authors -->
+    <div class="mt-12">
+      <div>
+        <app-heading marked="Top" notMarked="Authors"></app-heading>
+        <div class="mt-6">
+          <div class="mt-6" *ngFor="let author of authors.slice(0, 3)">
+            <app-author [author]="author"></app-author>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recommended topics -->
+      <div class="mt-12">
+        <app-heading marked="Recommended" notMarked="topics"></app-heading>
+      </div>
+    </div>
+  </div>
+</div>

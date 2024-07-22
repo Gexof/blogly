@@ -1,0 +1,16 @@
+<div class="flex">
+  <div class="h-[60px] w-[60px] me-3">
+    <img
+      class="w-full h-full object-cover rounded-full"
+      [src]="author?.picture"
+      alt=""
+    />
+  </div>
+
+  <div class="w-2/3">
+    <h6 class="font-bold text-stone-950">{{ author?.name }}</h6>
+    <p class="text-gray-500 text-[10px]">
+      {{ author?.title }}
+    </p>
+  </div>
+</div>
