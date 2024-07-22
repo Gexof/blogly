@@ -1,31 +1,33 @@
-<div class="flex cursor-pointer h-[190px]">
-  <div class="me-6 w-4/6">
-    <app-card-author
-      [authorName]="authorName"
-      [authorPic]="authorImg"
-    ></app-card-author>
+<a [routerLink]="['blog', blog?.id]">
+  <div class="flex cursor-pointer h-[190px]">
+    <div class="me-6 w-4/6">
+      <app-card-author
+        [authorName]="authorName"
+        [authorPic]="authorImg"
+      ></app-card-author>
 
-    <!-- Post Title -->
-    <h4 class="line-clamp-2 text-2xl text-stone-950 font-bold mb-3">
-      {{ blog?.title }}
-    </h4>
+      <!-- Post Title -->
+      <h4 class="line-clamp-2 text-2xl text-stone-950 font-bold mb-3">
+        {{ blog?.title }}
+      </h4>
 
-    <!-- Post Body -->
-    <p class="line-clamp-2 text-xs text-gray-500 mb-4">
-      {{ blog?.body }}
-    </p>
+      <!-- Post Body -->
+      <p class="line-clamp-2 text-xs text-gray-500 mb-4">
+        {{ blog?.body }}
+      </p>
 
-    <app-card-date-save
-      [date]="blog?.date"
-      [comments]="blog?.comments?.length"
-    ></app-card-date-save>
+      <app-card-date-save
+        [date]="blog?.date"
+        [comments]="blog?.comments?.length"
+      ></app-card-date-save>
+    </div>
+    <!-- Cover Image -->
+    <div class="w-2/6">
+      <img
+        [src]="blog?.coverImage"
+        alt=""
+        class="rounded-lg object-cover h-full w-full"
+      />
+    </div>
   </div>
-  <!-- Cover Image -->
-  <div class="w-2/6">
-    <img
-      [src]="blog?.coverImage"
-      alt=""
-      class="rounded-lg object-cover h-full w-full"
-    />
-  </div>
-</div>
+</a>

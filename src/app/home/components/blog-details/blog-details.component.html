@@ -1,0 +1,13 @@
+<div class="flex flex-col justify-center items-center px-[360px] mt-[64px]">
+  <img
+    class="rounded-lg w-full h-[350px] object-cover"
+    [src]="blog?.coverImage"
+    alt=""
+  />
+
+  <div>
+    <h1 class="text-4xl font-bold my-7">{{ blog?.title }}</h1>
+
+    <div [innerHTML]="blog?.body"></div>
+  </div>
+</div>

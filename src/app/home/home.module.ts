@@ -6,9 +6,15 @@ import { HomeComponent } from './home.component';
 import { SharedModule } from '../shared/shared.module';
 import { HeadingComponent } from './components/heading/heading.component';
 import { AuthorComponent } from './components/author/author.component';
+import BlogDetailsComponent from './components/blog-details/blog-details.component';
 
 @NgModule({
-  declarations: [HomeComponent, HeadingComponent, AuthorComponent],
+  declarations: [
+    HomeComponent,
+    HeadingComponent,
+    AuthorComponent,
+    BlogDetailsComponent,
+  ],
   imports: [CommonModule, HomeRoutingModule, SharedModule],
   exports: [HomeComponent],
 })

@@ -12,4 +12,8 @@ export class BlogService {
   getBlogs(): Observable<Blog[]> {
     return this.http.get<Blog[]>('http://localhost:3000/blogs');
   }
+
+  getBlogById(id: number): Observable<Blog> {
+    return this.http.get<Blog>(`http://localhost:3000/blogs/${id}`);
+  }
 }
