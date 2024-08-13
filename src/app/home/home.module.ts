@@ -7,6 +7,7 @@ import { SharedModule } from '../shared/shared.module';
 import { HeadingComponent } from './components/heading/heading.component';
 import { AuthorComponent } from './components/author/author.component';
 import BlogDetailsComponent from './components/blog-details/blog-details.component';
+import { CommentComponent } from './components/comment/comment.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import BlogDetailsComponent from './components/blog-details/blog-details.compone
     HeadingComponent,
     AuthorComponent,
     BlogDetailsComponent,
+    CommentComponent,
   ],
   imports: [CommonModule, HomeRoutingModule, SharedModule],
   exports: [HomeComponent],

@@ -1,4 +1,6 @@
-<div class="flex flex-col justify-center items-center px-[360px] mt-[64px]">
+<div
+  class="flex flex-col justify-center items-start mx-auto px-10 xl:px-60 mt-[64px]"
+>
   <img
     class="rounded-lg w-full h-[350px] object-cover"
     [src]="blog?.coverImage"
@@ -9,5 +11,17 @@
     <h1 class="text-4xl font-bold my-7">{{ blog?.title }}</h1>
 
     <div [innerHTML]="blog?.body"></div>
+  </div>
+
+  <!-- Comments Section -->
+  <div class="mt-7">
+    <div class="flex items-center">
+      <app-heading marked="Top" notMarked="Comments"></app-heading>
+      <p class="font-semibold text-base ms-1">({{ blog?.comments?.length }})</p>
+    </div>
+
+    <div class="mt-6" *ngFor="let comment of blog?.comments">
+      <app-comment [comment]="comment"></app-comment>
+    </div>
   </div>
 </div>

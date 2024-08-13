@@ -1,0 +1,18 @@
+<div class="flex">
+  <div class="w-10 h-10 me-4">
+    <img
+      class="rounded-full object-cover w-full h-full"
+      [src]="comment?.commenterImage"
+      alt=""
+    />
+  </div>
+
+  <div>
+    <h3 class="font-medium text-sm text-stone-950">
+      {{ comment?.commenterName }}
+    </h3>
+    <p class="text-xs text-gray-500">
+      {{ comment?.text }}
+    </p>
+  </div>
+</div>

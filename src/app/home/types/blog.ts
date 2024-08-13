@@ -1,8 +1,4 @@
-export interface Comment {
-  id: number;
-  author: string;
-  text: string;
-}
+import { Comment } from './comment';
 
 export interface Blog {
   id?: number;
