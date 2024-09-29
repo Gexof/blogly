@@ -7,5 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 export class CardDateSaveComponent {
   @Input({ required: true }) date?: string;
-  @Input({ required: true }) comments?: number;
+  @Input({ required: true }) comments?: string;
 }

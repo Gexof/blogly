@@ -13,12 +13,12 @@
 
       <!-- Post Body -->
       <p class="line-clamp-2 text-xs text-gray-500 mb-4">
-        {{ blog?.body }}
+        {{ blog?.content }}
       </p>
 
       <app-card-date-save
         [date]="blog?.date"
-        [comments]="blog?.comments?.length"
+        [comments]="blog?.commentCount"
       ></app-card-date-save>
     </div>
   </div>

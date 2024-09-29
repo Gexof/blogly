@@ -3,11 +3,12 @@ import { Comment } from './comment';
 export interface Blog {
   id?: number;
   title: string;
-  body: string;
+  content: string;
   date: string;
   comments: Comment[];
+  commentCount: string;
   authorId: number;
-  tags: string[];
   coverImage: string;
-  bodyImages: string[];
+  authorName: string;
+  authorImage: string;
 }

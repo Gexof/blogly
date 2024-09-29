@@ -32,26 +32,16 @@ export class HomeComponent implements OnInit {
   }
 
   getAuthors() {
-    this.authorService.getAuthors().subscribe({
-      next: (res) => {
-        this.authors = res;
-      },
-    });
+    // this.authorService.getAuthors().subscribe({
+    //   next: (res) => {
+    //     this.authors = res;
+    //   },
+    // });
   }
 
   getAuthorById(authorId: number) {
     this.authorService.getAuthorById(authorId).subscribe({
       next: (res) => {},
     });
-  }
-
-  getAuthorImg(authorId: number): string {
-    const author = this.authors.find((a) => a.id === authorId);
-    return author ? author.picture : '';
-  }
-
-  getAuthorName(authorId: number): string {
-    const author = this.authors.find((a) => a.id === authorId);
-    return author ? author.name : 'Unknown Author';
   }
 }

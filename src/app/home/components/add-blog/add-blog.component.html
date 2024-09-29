@@ -1,0 +1,7 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <input type="file" formControlName="coverImage" />
+  <input type="text" placeholder="Post Title" formControlName="title" />
+  <p-editor [style]="{ height: '320px' }" formControlName="content" />
+
+  <button type="submit">Submit</button>
+</form>
