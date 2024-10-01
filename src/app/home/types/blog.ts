@@ -12,3 +12,9 @@ export interface Blog {
   authorName: string;
   authorImage: string;
 }
+
+export interface NewBlog {
+  title: string;
+  content: string;
+  coverImage: string;
+}

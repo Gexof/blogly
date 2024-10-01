@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EditorModule } from 'primeng/editor';
+import { CloudinaryModule } from '@cloudinary/ng';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
@@ -27,6 +28,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     SharedModule,
     EditorModule,
     ReactiveFormsModule,
+    CloudinaryModule,
   ],
   exports: [HomeComponent],
 })

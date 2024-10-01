@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Blog } from '../types/blog';
+import { Blog, NewBlog } from '../types/blog';
 import { environment } from '../../../environments/environment.development';
 
 @Injectable({
@@ -16,5 +16,9 @@ export class BlogService {
 
   getBlogById(id: number): Observable<Blog> {
     return this.http.get<Blog>(`${environment.baseApi}/posts/${id}`);
+  }
+
+  addBlog(model: NewBlog) {
+    return this.http.post(`${environment.baseApi}/posts`, model);
   }
 }
