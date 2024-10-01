@@ -82,14 +82,13 @@ export class AddBlogComponent implements OnInit {
   onFileSelected(event: any) {
     const file = event.target.files[0] as File | null;
 
-    console.log(file);
-
     this.createImagePreview(file!);
   }
 
   // Handler for file drop
   onFileDrop(event: DragEvent): void {
     event.preventDefault();
+
     const file = event.dataTransfer?.files[0] as File | null;
     this.createImagePreview(file!);
   }
