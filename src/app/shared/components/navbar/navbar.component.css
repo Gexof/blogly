@@ -1,0 +1,15 @@
+.link-styles {
+  @apply text-gray-500 font-bold uppercase text-[14px] hover:text-lime-400;
+}
+
+.flex-center {
+  @apply flex justify-center items-center;
+}
+
+.active-link {
+  @apply text-lime-400;
+}
+
+.nav-link {
+  @apply flex items-center text-gray-400 hover:text-gray-800 font-medium space-x-2;
+}

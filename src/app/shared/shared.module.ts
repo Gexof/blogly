@@ -5,6 +5,7 @@ import { CardDateSaveComponent } from './components/card-date-save/card-date-sav
 import { VerticalTextCardComponent } from './components/vertical-text-card/vertical-text-card.component';
 import { HorizantalCardComponent } from './components/horizantal-card/horizantal-card.component';
 import { RouterModule } from '@angular/router';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -12,8 +13,13 @@ import { RouterModule } from '@angular/router';
     CardAuthorComponent,
     CardDateSaveComponent,
     VerticalTextCardComponent,
+    NavbarComponent,
   ],
   imports: [CommonModule, RouterModule],
-  exports: [HorizantalCardComponent, VerticalTextCardComponent],
+  exports: [
+    HorizantalCardComponent,
+    VerticalTextCardComponent,
+    NavbarComponent,
+  ],
 })
 export class SharedModule {}

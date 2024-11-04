@@ -11,6 +11,10 @@ const routes: Routes = [
     loadChildren: () =>
       import('./author/author.module').then((m) => m.AuthorModule),
   },
+  {
+    path: 'auth', // Don't need 'auth' here; this will load both /login and /signup
+    loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
+  },
 ];
 
 @NgModule({

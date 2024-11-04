@@ -1,0 +1,128 @@
+<header class="bg-cyan-950">
+  <nav class="container py-3 mx-auto flex justify-between">
+    <!-- Logo -->
+    <a routerLink="/" class="block flex-center">
+      <img src="blogly.png" alt="Blogly Logo" />
+    </a>
+
+    <!-- User Actions (Search, Create, Login, Signup) -->
+
+    <div class="flex-center">
+      <a [routerLink]="['new-blog']" class="mr-16 md:block hidden">
+        <svg
+          width="13"
+          height="14"
+          viewBox="0 0 13 14"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12.326 0.820957L12.6787 1.17365C13.1647 1.66025 13.0912 2.52285 12.5131 3.10032L5.23985 10.3736L2.88338 11.2356C2.58747 11.3444 2.29934 11.2033 2.24076 10.9217C2.22096 10.8196 2.23028 10.714 2.26766 10.6169L3.1464 8.24008L10.3993 0.986544C10.9774 0.409083 11.84 0.334957 12.326 0.821555V0.820957ZM4.92243 1.54428C5.00093 1.54428 5.07866 1.55974 5.15119 1.58978C5.22371 1.61982 5.28961 1.66386 5.34512 1.71937C5.40063 1.77488 5.44467 1.84078 5.47471 1.9133C5.50475 1.98583 5.52021 2.06356 5.52021 2.14206C5.52021 2.22057 5.50475 2.2983 5.47471 2.37083C5.44467 2.44335 5.40063 2.50925 5.34512 2.56476C5.28961 2.62027 5.22371 2.66431 5.15119 2.69435C5.07866 2.72439 5.00093 2.73985 4.92243 2.73985H2.53128C2.2142 2.73985 1.9101 2.86581 1.68588 3.09003C1.46167 3.31424 1.33571 3.61834 1.33571 3.93542V11.1089C1.33571 11.4259 1.46167 11.73 1.68588 11.9543C1.9101 12.1785 2.2142 12.3044 2.53128 12.3044H9.70471C10.0218 12.3044 10.3259 12.1785 10.5501 11.9543C10.7743 11.73 10.9003 11.4259 10.9003 11.1089V8.71771C10.9003 8.55917 10.9633 8.40712 11.0754 8.29501C11.1875 8.18291 11.3395 8.11993 11.4981 8.11993C11.6566 8.11993 11.8087 8.18291 11.9208 8.29501C12.0329 8.40712 12.0959 8.55917 12.0959 8.71771V11.1089C12.0959 11.743 11.8439 12.3512 11.3955 12.7996C10.9471 13.2481 10.3389 13.5 9.70471 13.5H2.53128C1.89711 13.5 1.28891 13.2481 0.840487 12.7996C0.39206 12.3512 0.140137 11.743 0.140137 11.1089V3.93542C0.140137 3.30125 0.39206 2.69305 0.840487 2.24463C1.28891 1.7962 1.89711 1.54428 2.53128 1.54428H4.92243Z"
+            fill="#F5F7F9"
+          />
+        </svg>
+      </a>
+
+      <!-- User Options -->
+      <div class="relative mt-5 md:mt-0">
+        <button
+          class="rounded-full w-9 h-9 focus:outline-none"
+          (click)="toggleDropDown()"
+        >
+          @if (!isLogin) {
+          <img src="user.png" alt="" class="rounded-full" />
+          } @else {
+
+          <img src="levi.jpg" alt="" class="rounded-full" />
+          }
+        </button>
+        <div
+          [ngClass]="
+            isDropDownOpen
+              ? 'transition ease-out duration-300 transform absolute opacity-100 scale-100'
+              : 'transition ease-in duration-75 transform hidden opacity-0 scale-95'
+          "
+          class="md:absolute right-0 mt-2 w-72 bg-gray-50 rounded-md shadow-lg z-10 p-6"
+        >
+          <!-- WELCOME -->
+          @if (!isLogin) {
+          <h3 class="text-slate-950 text-center font-medium">
+            Get Started on Blogly
+          </h3>
+          }
+          <!-- LINKS -->
+          <ul class="space-y-2">
+            @if(!isLogin) {
+            <!-- SIGN UP -->
+            <li>
+              <a
+                type="submit"
+                class="bg-lime-500 text-[#F5F7F9] font-bold rounded-[40px] py-3 px-6 hover:bg-lime-600 block text-center"
+                [routerLink]="['signup']"
+              >
+                Sign up
+              </a>
+            </li>
+
+            <!-- SIGN IN -->
+            <li>
+              <a
+                [routerLink]="['auth', 'login']"
+                class="text-slate-950 font-bold rounded-[40px] py-2 px-6 block border-[1px] border-slate-950 text-center mt-4"
+                routerLinkActive="active-link"
+                [routerLinkActiveOptions]="{ exact: true }"
+                >Sign in</a
+              >
+            </li>
+
+            } @else {
+            <!-- New Blog -->
+            <li class="md:hidden block">
+              <a [routerLink]="['new-blog']" class="nav-link">
+                <i class="fa-solid fa-pen-to-square"></i>
+                <h3>Write</h3>
+              </a>
+            </li>
+            <!-- Profile -->
+            <li class="">
+              <a [routerLink]="['profile']" class="nav-link">
+                <i class="fa-regular fa-user"></i>
+                <h3 class="">Profile</h3>
+              </a>
+            </li>
+            <!-- Settings -->
+            <li class="">
+              <a [routerLink]="['settings']" class="nav-link">
+                <i class="fa-solid fa-gear"></i>
+                <h3>Settings</h3>
+              </a>
+            </li>
+            <!-- Logout -->
+            <li class="font-medium text-red-500">
+              <a [routerLink]="['auth', 'login']" class="nav-link">
+                <img src="logout.svg" alt="" />
+                <h3 class="text-red-500">Sign out</h3>
+              </a>
+            </li>
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- <ul class="p-3">
+  @for ( navLink of navLinks; track $index) {
+  <li>
+    <a
+      [routerLink]="navLink.path"
+      routerLinkActive="active-link"
+      [routerLinkActiveOptions]="{ exact: true }"
+      ariaCurrentWhenActive="page"
+      class="link-styles"
+      >{{ navLink.label }}</a
+    >
+  </li>
+  }
+</ul> -->
